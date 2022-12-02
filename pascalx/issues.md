@@ -21,4 +21,11 @@
 - in my case I had to `pip install fastnumbers` (the previous script failed at first)
   it would've been nice to check for missing dependencies before downloading all the files
 
+  but that still didn't work and I had to change in the script
+  `python3` to `python3.8`
+
+  but now I get this error
+
+  ```zlib.error: Error -3 while decompressing data: invalid distance too far    back```
+
 - I also had to download those because the ref panel already downloaded in hermione did not work for me

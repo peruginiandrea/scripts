@@ -30,6 +30,20 @@ X.load_GWAS(f'{DIR_PHEN}polished_21001_irnt.tsv', name="BMI",
 X.load_GWAS(f'{DIR_PHEN}polished_4079_irnt.tsv', name="DiastolicBP",
             rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
 
+X.load_GWAS(f'{DIR_PHEN}polished_30740_irnt.tsv', name="Glc",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_PHEN}polished_30760_irnt.tsv', name="HDL",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_PHEN}polished_6150_4.tsv', name="Hypertension",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_PHEN}polished_104910.tsv', name="PhysicalActivity",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
+
+######
+
 X.load_GWAS(f'{DIR_QSM}QSM_Left_caudate.txt', name="QSM_Left_caudate", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
 
 
