@@ -18,9 +18,6 @@ X.load_refpanel("/SSD/scratch/hermione/ref_data/EUR.1KG.GRCh38", parallel=22)
 
 X.load_genome("/SSD/scratch/hermione/ref_data/GRCh38_annotation.tsv")
 
-os.chdir(DIR_PHEN)
-
-list_dir = os.listdir(DIR_PHEN)
 
 
 # I used:
