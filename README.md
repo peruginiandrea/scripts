@@ -76,10 +76,11 @@
 3. Various files need to be reformatted/polished/modified before running the other scripts. So run *sanitize_phen.py* before continuing.
 
 4. LDSC
-    i. *munge.sh*
-    ii. *ld_score_regression.sh*
+
+    - *munge.sh*
+    - *ld_score_regression.sh*
 
 5. Run *log_parser.py* to generate a summary.txt file for the next step.
-5. Visualize results of LDSC with *heatmap.py*.
+6. Visualize results of LDSC with *heatmap.py*.
 
-6. PascalX
+7. PascalX
