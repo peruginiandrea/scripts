@@ -22,13 +22,8 @@ os.chdir(DIR_PHEN)
 
 list_dir = os.listdir(DIR_PHEN)
 
-# for file in list_dir:
-#     if os.path.isfile(file) and file.endswith(".tsv") and file.startswith("polished_"):
 
-        # head -n 1 polished_104910.tsv | tr "\t" "\n" | awk '{print $0, "\t", NR-1}'
-        # to get a nicer formatting in order to find the corresponding column numbers
-        # X.load_genome(file, ccol=1, cid=5, )
-
+# I used:
 # head -n 1 polished_2443.tsv | tr "\t" "\n" | awk '{print $0, "\t", NR-1}'
 # to get a nicer formatting in order to find the corresponding column numbers
 X.load_GWAS(f'{DIR_PHEN}polished_2443.tsv', name="Diabetes", rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
