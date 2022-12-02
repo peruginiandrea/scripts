@@ -60,6 +60,8 @@ cpval = df.pivot(index="p1", columns="p2", values="sig")
 color = sns.color_palette("coolwarm_r", as_cmap=True)
 sns.heatmap(cor, annot=cpval, fmt="", center=0, cmap = color)
 
+
+## I'm not currently using the following plot
 # log10 transformation
 df["log10p"] = df["p"].apply(lambda x: -math.log10(x))
 

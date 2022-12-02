@@ -1,6 +1,8 @@
 #!/bin/bash
 cd /HDD/data/andrea/phenotypes/
 
+## TODO: check if sleep is actually necessary
+
 file1="variants.tsv"
 name="variants_"
 for namefile in *.both_sexes.tsv;
