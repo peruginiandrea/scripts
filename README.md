@@ -1,18 +1,27 @@
+- [Choices](#choices)
+  - [IDPs](#idps)
+  - [Phenotypes](#phenotypes)
+    - [Risk factors](#risk-factors)
+    - [Diseases](#diseases)
+- [Data used](#data-used)
+  - [IDPs](#idps-1)
+  - [Phenotypes](#phenotypes-1)
+- [Project structure](#project-structure)
 
 # Choices
 
 ## IDPs
 
 - White Matter Hyperintensity (WMH):
-    - total volume
-    - lesion count (only available in older stats with a smaller sample)
+  - total volume
+  - lesion count (only available in older stats with a smaller sample)
 - QSM and T2\* for WMH
 - QSM for (left and right):
-    +  Caudate
-    + Putamen
-    + Pallidum
-    + Substantia Nigra
-    + Amygdala
+  - Caudate
+  - Putamen
+  - Pallidum
+  - Substantia Nigra
+  - Amygdala
 
 ## Phenotypes
 
@@ -47,17 +56,16 @@
 
 ## IDPs
 
-- BIG40: https://open.win.ox.ac.uk/ukbiobank/big40/
-    - WMH total volume:
-        - IDP_T2_FLAIR_BIANCA_WMH_volume
-        - file 1437
+- BIG40: <https://open.win.ox.ac.uk/ukbiobank/big40/>
+  - WMH total volume:
+    - IDP_T2_FLAIR_BIANCA_WMH_volume
+    - file 1437
 
-- All other IDPs from: https://www.fmrib.ox.ac.uk/ukbiobank/gwas_resources/index.html
+- All other IDPs from: <https://www.fmrib.ox.ac.uk/ukbiobank/gwas_resources/index.html>
 
 ## Phenotypes
 
-https://docs.google.com/spreadsheets/d/1kvPoupSzsSFBNSztMzl04xMoSC3Kcx3CrjVf4yBmESU/edit#gid=227859291
-
+<https://docs.google.com/spreadsheets/d/1kvPoupSzsSFBNSztMzl04xMoSC3Kcx3CrjVf4yBmESU/edit#gid=227859291>
 
 # Project structure
 
