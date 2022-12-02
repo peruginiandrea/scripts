@@ -83,4 +83,4 @@
 5. Run *ldsc/log_parser.py* to generate a summary.txt file for the next step.
 6. Visualize results of LDSC with *ldsc/heatmap.py*.
 
-7. PascalX (*/pascalx/pascalx.py*) ❌
+7. PascalX (*pascalx/pascalx.py*) ❌
