@@ -69,18 +69,18 @@
 
 # Project structure
 
-1. QSM and T2\* IDPs are downloaded in two separate folders: discovery and replication. The files from both samples are merged into one file per IDP via *merge_samples.R*.
+1. QSM and T2\* IDPs are downloaded in two separate folders: discovery and replication. The files from both samples are merged into one file per IDP via *general/merge_samples.R*.
 
-2. Pasting variants.tsv to phenotypes summary stats via *merge_variants.sh*.
+2. Pasting variants.tsv to phenotypes summary stats via *general/merge_variants.sh*.
 
-3. Various files need to be reformatted/polished/modified before running the other scripts. So run *sanitize_phen.py* before continuing.
+3. Various files need to be reformatted/polished/modified before running the other scripts. So run *general/sanitize_phen.py* before continuing.
 
 4. LDSC
 
-    - *munge.sh*
-    - *ld_score_regression.sh*
+    - *ldsc/munge.sh*
+    - *ldsc/ld_score_regression.sh*
 
-5. Run *log_parser.py* to generate a summary.txt file for the next step.
-6. Visualize results of LDSC with *heatmap.py*.
+5. Run *ldsc/log_parser.py* to generate a summary.txt file for the next step.
+6. Visualize results of LDSC with *ldsc/heatmap.py*.
 
-7. PascalX
+7. PascalX (*/pascalx/pascalx.py*) ❌
