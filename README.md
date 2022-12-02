@@ -83,4 +83,7 @@
 5. Run *ldsc/log_parser.py* to generate a summary.txt file for the next step.
 6. Visualize results of LDSC with *ldsc/heatmap.py*.
 
-7. PascalX (*pascalx/pascalx.py*) ❌
+7. PascalX
+    - Download reference panel by running *pascalx/download_ref.sh"
+    - Download genome annotation by running *pascalx/download_annotation.py*
+    - Xscoring with *pascalx/xscorer.py*

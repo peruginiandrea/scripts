@@ -21,9 +21,14 @@ X.load_genome("/HDD/data/andrea/GRCh38_protein_coding.tsv")
 # I used:
 # head -n 1 polished_2443.tsv | tr "\t" "\n" | awk '{print $0, "\t", NR-1}'
 # to get a nicer formatting in order to find the corresponding column numbers
-X.load_GWAS(f'{DIR_PHEN}polished_2443.tsv', name="Diabetes", rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
+X.load_GWAS(f'{DIR_PHEN}polished_2443.tsv', name="Diabetes",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
 
+X.load_GWAS(f'{DIR_PHEN}polished_21001_irnt.tsv', name="BMI",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
 
+X.load_GWAS(f'{DIR_PHEN}polished_4079_irnt.tsv', name="DiastolicBP",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
 
 X.load_GWAS(f'{DIR_QSM}QSM_Left_caudate.txt', name="QSM_Left_caudate", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
 
