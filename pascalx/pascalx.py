@@ -11,12 +11,11 @@ DIR_WMH40 = "/HDD/data/andrea/WMH_BIG40/"
 
 X = xscorer.zsum(leftTail=True, gpu=True)
 
-## TODO : figure out why this doesn't work (and check the files)
-## ! NOTE : I'm not sure if these are the correct files
 
 X.load_refpanel("/SSD/scratch/hermione/ref_data/EUR.1KG.GRCh38", parallel=22)
 
-X.load_genome("/SSD/scratch/hermione/ref_data/GRCh38_annotation.tsv")
+# loading genome downloaded with pascalx/download_annotation.py
+X.load_genome("/HDD/data/andrea/GRCh37_protein_coding.txt")
 
 
 
@@ -24,11 +23,6 @@ X.load_genome("/SSD/scratch/hermione/ref_data/GRCh38_annotation.tsv")
 # head -n 1 polished_2443.tsv | tr "\t" "\n" | awk '{print $0, "\t", NR-1}'
 # to get a nicer formatting in order to find the corresponding column numbers
 X.load_GWAS(f'{DIR_PHEN}polished_2443.tsv', name="Diabetes", rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
-
-
-# i don't know why these files have an index column
-# DONE remove index column
-# TODO : verify that values obtained from ldsc are still correct!!
 
 
 
