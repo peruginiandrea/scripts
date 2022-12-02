@@ -12,10 +12,9 @@ DIR_WMH40 = "/HDD/data/andrea/WMH_BIG40/"
 X = xscorer.zsum(leftTail=True, gpu=True)
 
 
-X.load_refpanel("/SSD/scratch/hermione/ref_data/EUR.1KG.GRCh38", parallel=22)
+X.load_refpanel("/HDD/data/andrea/ref_panel/EUR.1KG.GRCh38", parallel=22, keepfile="/HDD/data/andrea/ref_panel/EUR_1KG_phase3_samples.tsv")
 
-# loading genome downloaded with pascalx/download_annotation.py
-X.load_genome("/HDD/data/andrea/GRCh37_protein_coding.txt")
+X.load_genome("/HDD/data/andrea/GRCh38_protein_coding.tsv")
 
 
 
