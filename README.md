@@ -69,8 +69,7 @@
 
 # Project structure
 
-1. QSM and T2\* IDPs are downloaded in two separate folders: discovery and replication
-The files from both samples are merged into one file per IDP via *merge_samples.R*.
+1. QSM and T2\* IDPs are downloaded in two separate folders: discovery and replication. The files from both samples are merged into one file per IDP via *merge_samples.R*.
 
 2. Pasting variants.tsv to phenotypes summary stats via *merge_variants.sh*.
 
