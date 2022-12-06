@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import pickle
 from PascalX import xscorer
 
 DIR_PHEN = "/HDD/data/andrea/phenotypes/"
@@ -42,11 +43,40 @@ X.load_GWAS(f'{DIR_PHEN}polished_6150_4.tsv', name="Hypertension",
 X.load_GWAS(f'{DIR_PHEN}polished_104910.tsv', name="Moderate physical activity",
             rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
 
+X.load_GWAS(f'{DIR_PHEN}polished_1239.tsv', name="Smoking",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_PHEN}polished_6150_3.tsv', name="Stroke",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_PHEN}polished_4080_irnt.tsv', name="Systolic BP",
+            rscol=5, pcol=35, bcol=32, a1col=4, a2col=3, header=True)
+
+
 ######
 
 X.load_GWAS(f'{DIR_QSM}QSM_Left_caudate.txt', name="QSM_Left_caudate", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
 
-# TODO: add missing GWASs
+X.load_GWAS(f'{DIR_QSM}QSM_Left_SN.txt', name="QSM_Left_SN", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_QSM}QSM_Left_pallidum.txt', name="QSM_Left_pallidum", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_QSM}QSM_Left_putamen.txt', name="QSM_Left_putamen", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_QSM}QSM_Right_SN.txt', name="QSM_Right_SN", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_QSM}QSM_Right_caudate.txt', name="QSM_Right_caudate", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_QSM}QSM_Right_pallidum.txt', name="QSM_Right_pallidum", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_QSM}T2_WMH.txt', name="T2_WMH", rscol=0, pcol=7, bcol=5, a1col=4, a2col=3, header=True)
+
+# different format
+X.load_GWAS(f'{DIR_WMH}lesion.txt', name="lesion", rscol=1, pcol=11, bcol=10, a1col=4, a2col=3, header=True)
+X.load_GWAS(f'{DIR_WMH}volume.txt', name="volume", rscol=1, pcol=11, bcol=10, a1col=4, a2col=3, header=True)
+
+X.load_GWAS(f'{DIR_WMH40}volume_big40.txt', name="volume_big40", rscol=1, pcol=8, bcol=5, a1col=4, a2col=3, header=True)
+
 
 # to correct for sample overlapping
 # let's get gcov_int from summary.txt
@@ -104,4 +134,6 @@ for E_A, E_B_list in phenotypes.items():
         R = X.score_all(E_A=E_A, E_B=E_B, parallel=8, pcorr=gcov_ints[f"{E_A}-{E_B}"])
 
         # Save results
-        # TODO: Save results
+        X.save_scores(f"../results/pascalx_score_{E_A}-{E_B}.txt")
+        with open(f'../results/pascalx_score_{E_A}-{E_B}.pickle', 'wb') as f:
+            pickle.dump(R, f)
