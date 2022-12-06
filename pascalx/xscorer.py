@@ -84,10 +84,6 @@ def gcov_ints_update(idp, phen):
 
 
 
-R = X.score_all(E_A='Diabetes',E_B='QSM_Left_caudate', parallel=8, pcorr=gcov_ints["leftcaudate_diabetes"])
-
-
-
 # Create a dictionary of the GWAS phenotypes and IDPs to combine with each
 phenotypes = {
     "QSM_Left_caudate": ["Diabetes", ...],
