@@ -107,8 +107,11 @@ phen_names = {"100270": "Coffee intake",
              "6150_3": "Stroke",
              "6150_4": "Hypertension"}
 
+phen_id = {v: k for k, v in phen_names.items()}
+# in the for loop below, gcov_ints is called with values from the names
+# so we use its id to get the data from summary.txt for phenotypes
 def gcov_ints_update(idp, phen):
-    gcov_ints.update({f"{idp}-{phen_names[phen]}": get_gcov_int(idp, phen)})
+    gcov_ints.update({f"{idp}-{phen}": get_gcov_int(idp, phen_id[phen])})
 
 
 
