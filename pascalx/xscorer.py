@@ -134,6 +134,7 @@ for E_A, E_B_list in phenotypes.items():
         X.jointlyRank(E_A, E_B)
 
         # Score
+        gcov_ints_update(E_A, E_B)
         R = X.score_all(E_A=E_A, E_B=E_B, parallel=8, pcorr=gcov_ints[f"{E_A}-{E_B}"])
 
         # Save results
