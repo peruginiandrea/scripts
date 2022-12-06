@@ -111,7 +111,7 @@ lesion_df = pd.concat([stats_df, lesion_beta, lesion_p], axis=1)
 
 lesion_df["N"] = n_col
 
-#fixing names (removing index from beta and p)
+# fixing names (removing index from beta and p)
 volume_df["beta"] = volume_df["beta1"]
 volume_df.drop("beta1", axis=1)
 volume_df["pval"] = volume_df["p1"]
@@ -123,7 +123,7 @@ lesion_df.drop("beta9", axis=1)
 lesion_df["pval"] = lesion_df["p9"]
 lesion_df.drop("p9", axis=1)
 
-#polishing it up
+# polishing it up
 volume_df.dropna(subset=["pval", "beta"], inplace=True)
 volume_df.dropna(subset=["pval", "beta"], inplace=True)
 
