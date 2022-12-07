@@ -1,6 +1,6 @@
 import os
-import pandas as pd
 import pickle
+import pandas as pd
 from PascalX import xscorer
 
 DIR_PHEN = "/HDD/data/andrea/phenotypes/"
@@ -207,6 +207,17 @@ X.load_GWAS(
 X.load_GWAS(
     f"{DIR_QSM}QSM_Right_pallidum.txt",
     name="QSM_Right_pallidum",
+    rscol=0,
+    pcol=7,
+    bcol=5,
+    a1col=4,
+    a2col=3,
+    header=True,
+)
+
+X.load_GWAS(
+    f"{DIR_QSM}QSM_Right_putamen.txt",
+    name="QSM_Right_putamen",
     rscol=0,
     pcol=7,
     bcol=5,
