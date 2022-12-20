@@ -35,6 +35,9 @@ names = {
 df = df.replace({"p2": names})
 
 df["p1"] = df["p1"].apply(lambda x: x.replace("_", " "))
+df["p1"] = df["p1"].apply(lambda x: x.replace("T2", "T2*"))
+
+df["p1"] = df["p1"].replace({"lesion": "WMH Lesion count"}).replace({"volume": "WMH Volume"}).replace({"volume big40": "WMH Volume (Big40)"})
 
 # pivot for correlations
 cor = df.pivot(index="p1", columns="p2", values="rg")
@@ -60,11 +63,61 @@ cpval = df.pivot(index="p1", columns="p2", values="sig")
 # fmt is needed to work with strings (would convert to numbers by default)
 # (the way I did it, the star is just this character: *)
 color = sns.color_palette("coolwarm_r", as_cmap=True)
-sns.heatmap(cor, annot=cpval, fmt="", center=0, cmap=color)
 
 
+fig = plt.figure()
+
+# Create the axes in the figure
+# ax = fig.subplots()
+
+ax = sns.heatmap(cor, annot=cpval, fmt="", center=0, cmap=color, linecolor="black", linewidths=0.1)
+
+ax.set_title("Estimated genetic correlation")
+
+ax.hlines([10, 12], *ax.get_xlim())
+
+ax.set(xlabel="Phenotypes", ylabel="Brain IDPs")
+ax.title.set_weight('bold')
+
+ax.xaxis.label.set_weight('bold')
+
+ax.yaxis.label.set_weight('bold')
+
+ax.xaxis.label.set_color('blue')
+ax.yaxis.label.set_color('blue')
+
+plt.show()
 ## I'm not currently using the following plot
 # log10 transformation
-df["log10p"] = df["p"].apply(lambda x: -math.log10(x))
+
+
+df["log10p"] = sm.fdrcorrection(pvals)[1]
+df["log10p"] = df["log10p"].apply(lambda x: -math.log10(x))
 
 pval = df.pivot(index="p1", columns="p2", values="log10p")
+
+
+
+fig = plt.figure()
+
+# Create the axes in the figure
+# ax = fig.subplots()
+
+ax = sns.heatmap(pval, center=0, cmap=color, annot=cpval, fmt="", linecolor="black", linewidths=0.1)
+
+ax.set_title("Estimated genetic correlation: -log10(p-value)")
+
+ax.hlines([10, 12], *ax.get_xlim())
+
+ax.set(xlabel="Phenotypes", ylabel="Brain IDPs")
+
+ax.title.set_weight('bold')
+
+ax.xaxis.label.set_weight('bold')
+
+ax.yaxis.label.set_weight('bold')
+
+ax.xaxis.label.set_color('blue')
+ax.yaxis.label.set_color('blue')
+
+plt.show()
